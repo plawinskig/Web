@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Skontaktuj się z nami w sprawie wizyty w Jeleniej Górze – formularz kontaktowy dla turystów.">
+  <meta name="keywords" content="Jelenia Góra kontakt, formularz, informacja turystyczna, zapytanie">
+  <title>Kontakt – Jelenia Góra</title>
+</head>
+<body>
+  <header id="top">
+    <h1>Kontakt</h1>
+    <nav>
+      <a href="index.html">Strona główna</a> |
+      <a href="attractions.html">Atrakcje</a> |
+      <a href="info.html">Informacje praktyczne</a> |
+      <a href="contact.html">Kontakt</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Formularz kontaktowy</h2>
+    <form action="contact.html" method="get">
+      <p>
+        <label for="first-name">Imię:</label>
+        <input type="text" id="first-name" name="first_name">
+      </p>
+      <p>
+        <label for="last-name">Nazwisko:</label>
+        <input type="text" id="last-name" name="last_name">
+      </p>
+      <p>
+        <label for="home-city">Skąd przyjeżdżasz?</label>
+        <input type="text" id="home-city" name="home_city">
+      </p>
+
+      <p>
+        <label for="topic">Temat zapytania:</label>
+        <select id="topic" name="topic">
+          <optgroup label="Atrakcje">
+            <option value="monuments">Zabytki</option>
+            <option value="nature">Przyroda</option>
+          </optgroup>
+          <optgroup label="Pobyt">
+            <option value="accommodation">Noclegi</option>
+            <option value="spa">Uzdrowisko Cieplice</option>
+          </optgroup>
+        </select>
+      </p>
+
+      <fieldset>
+        <legend>Długość pobytu</legend>
+        <input type="radio" id="stay-day" name="stay" value="day" checked>
+        <label for="stay-day">1 dzień</label>
+        <input type="radio" id="stay-weekend" name="stay" value="weekend">
+        <label for="stay-weekend">Weekend</label>
+        <input type="radio" id="stay-week" name="stay" value="week">
+        <label for="stay-week">Tydzień</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Zainteresowania</legend>
+        <input type="checkbox" id="interest-history" name="interests" value="history">
+        <label for="interest-history">Historia</label>
+        <input type="checkbox" id="interest-hiking" name="interests" value="hiking">
+        <label for="interest-hiking">Wędrówki</label>
+        <input type="checkbox" id="interest-spa" name="interests" value="spa">
+        <label for="interest-spa">Termy</label>
+      </fieldset>
+
+      <p>
+        <label for="message">Wiadomość (maks. 200 znaków):</label><br>
+        <textarea id="message" name="message" rows="5" cols="40" maxlength="200"></textarea>
+      </p>
+
+      <p>
+        <button type="reset">Wyczyść</button>
+        <button type="submit">Wyślij</button>
+      </p>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Jelenia Góra – projekt witryny. Napisz: <a href="mailto:kontakt@example.com">kontakt@example.com</a></p>
+  </footer>
+</body>
+</html>
