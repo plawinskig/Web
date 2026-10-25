@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Zarejestruj się w serwisie o Jeleniej Górze – formularz z danymi osobowymi turysty.">
+  <meta name="keywords" content="Jelenia Góra rejestracja, formularz, dane osobowe, turysta, wydarzenia">
+  <title>Rejestracja – Jelenia Góra</title>
+</head>
+<body>
+  <header id="top">
+    <h1>Rejestracja</h1>
+    <nav>
+      <a href="index.html">Strona główna</a> |
+      <a href="attractions.html">Atrakcje</a> |
+      <a href="info.html">Informacje praktyczne</a> |
+      <a href="contact.html">Kontakt</a> |
+      <a href="registration.html">Rejestracja</a> |
+      <a href="profile.html">Profil turysty</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Dane osobowe</h2>
+    <p>
+      Zarejestruj się, aby otrzymywać informacje o&nbsp;wydarzeniach w&nbsp;Jeleniej Górze,
+      a&nbsp;w&nbsp;miesiącu urodzin &ndash; małą niespodziankę.
+    </p>
+
+    <!-- Submitting leads to the next step: the tourist profile form -->
+    <form action="profile.html" method="get" autocomplete="on">
+      <p>
+        <label for="first-name">Imię:</label>
+        <input type="text" id="first-name" name="first_name" autocomplete="given-name" autofocus aria-describedby="first-name-hint">
+        <small id="first-name-hint">np. Anna</small>
+      </p>
+      <p>
+        <label for="last-name">Nazwisko:</label>
+        <input type="text" id="last-name" name="last_name" autocomplete="family-name" required aria-describedby="last-name-hint">
+        <small id="last-name-hint">pole wymagane, np. Kowalska</small>
+      </p>
+      <p>
+        <label for="birth-month">Miesiąc urodzin:</label>
+        <input type="text" id="birth-month" name="birth_month" list="months" aria-describedby="birth-month-hint">
+        <small id="birth-month-hint">wybierz z&nbsp;listy, np. lipiec</small>
+        <datalist id="months">
+          <option value="styczeń"></option>
+          <option value="luty"></option>
+          <option value="marzec"></option>
+          <option value="kwiecień"></option>
+          <option value="maj"></option>
+          <option value="czerwiec"></option>
+          <option value="lipiec"></option>
+          <option value="sierpień"></option>
+          <option value="wrzesień"></option>
+          <option value="październik"></option>
+          <option value="listopad"></option>
+          <option value="grudzień"></option>
+        </datalist>
+      </p>
+      <p>
+        <label for="email">Adres e-mail:</label>
+        <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-hint">
+        <small id="email-hint">pole wymagane, np. anna@example.com</small>
+      </p>
+      <p>
+        <label for="phone">Telefon:</label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel" pattern="\+\d{2} \d{3}-\d{3}-\d{3}" title="Format: +XX XXX-XXX-XXX" aria-describedby="phone-hint">
+        <small id="phone-hint">format: +XX XXX-XXX-XXX, np. +48 601-234-567</small>
+      </p>
+
+      <p>
+        <button type="submit">Dalej</button>
+      </p>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Jelenia Góra – projekt witryny. Napisz: <a href="mailto:kontakt@example.com">kontakt@example.com</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Uzupełnij profil turysty: planowany termin przyjazdu do Jeleniej Góry, preferowana trudność szlaków i atrakcje, których szukasz.">
+  <meta name="keywords" content="Jelenia Góra, profil turysty, preferencje, szlaki, atrakcje, przyjazd">
+  <title>Profil turysty – Jelenia Góra</title>
+</head>
+<body>
+  <header id="top">
+    <h1>Profil turysty</h1>
+    <nav>
+      <a href="index.html">Strona główna</a> |
+      <a href="attractions.html">Atrakcje</a> |
+      <a href="info.html">Informacje praktyczne</a> |
+      <a href="contact.html">Kontakt</a> |
+      <a href="registration.html">Rejestracja</a> |
+      <a href="profile.html">Profil turysty</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Dodatkowe informacje o&nbsp;Tobie</h2>
+    <p>Powiedz nam więcej o&nbsp;swoich planach, a&nbsp;dopasujemy propozycje zwiedzania.</p>
+
+    <!-- Placeholders only where the spec allows them: color, month and range do not support it -->
+    <form action="profile.html" method="get">
+      <p>
+        <label for="profile-color">Kolor Twojego profilu:</label>
+        <input type="color" id="profile-color" name="profile_color" value="#4a6b52">
+      </p>
+      <p>
+        <label for="arrival-month">Planowany przyjazd (miesiąc i&nbsp;rok):</label>
+        <input type="month" id="arrival-month" name="arrival_month">
+      </p>
+      <p>
+        <label for="trail-difficulty">Preferowana trudność szlaków:</label>
+        łatwe <input type="range" id="trail-difficulty" name="trail_difficulty" min="1" max="5" value="3"> trudne
+      </p>
+      <p>
+        <label for="attraction-search">Jakiej atrakcji szukasz?</label>
+        <input type="search" id="attraction-search" name="attraction_search" placeholder="np. Zamek Chojnik">
+      </p>
+      <p>
+        <label for="website">Twój blog lub profil podróżniczy:</label>
+        <input type="url" id="website" name="website" placeholder="np. https://example.com">
+      </p>
+
+      <p>
+        <button type="submit">Zapisz</button>
+      </p>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Jelenia Góra – projekt witryny. Napisz: <a href="mailto:kontakt@example.com">kontakt@example.com</a></p>
+  </footer>
+</body>
+</html>
