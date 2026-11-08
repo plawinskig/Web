@@ -1,0 +1,552 @@
+/* Site stylesheet. Sections follow the numbered points of assignment CSS_1. */
+
+/* Base styles. The % base keeps the visitor's browser font size and em headings scale with it. */
+body {
+  margin: 0 auto;
+  padding: 1em;
+  max-width: 60em;
+  background-color: #f4f7f2;
+  color: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+/* Opaque panels keep text readable over image backgrounds. */
+body > header,
+body > main,
+body > footer {
+  margin-bottom: 1em;
+  padding: 1em;
+  background-color: #ffffff;
+}
+
+/* Wide content must not force the whole page to scroll sideways. */
+img,
+textarea {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+/* Point 2: external stylesheet. */
+.embedding-external {
+  color: #4a6b52;
+  font-weight: bold;
+}
+
+/* Point 3: font size units. */
+.size-percent {
+  font-size: 125%;
+}
+
+.size-em {
+  font-size: 1.5em;
+}
+
+.size-px {
+  font-size: 12px;
+}
+
+.size-pt {
+  font-size: 14pt;
+}
+
+/* Point 4: backgrounds. */
+.background-box {
+  margin-bottom: 1em;
+  border: 1px solid #333333;
+  height: 10em;
+}
+
+.background-color-only {
+  background-color: #cfe8f7;
+}
+
+/* A smaller tile makes the repetition visible inside a low box. */
+.background-with-image {
+  background-image: url("../images/mountains.svg");
+  background-size: 100px 60px;
+}
+
+.background-repeat-both {
+  background-repeat: repeat;
+}
+
+.background-repeat-x {
+  background-repeat: repeat-x;
+}
+
+.background-repeat-y {
+  background-repeat: repeat-y;
+}
+
+.background-no-repeat {
+  background-repeat: no-repeat;
+}
+
+.background-position-keywords {
+  background-position: right bottom;
+}
+
+.background-position-lengths {
+  background-position: 40px 20px;
+}
+
+.background-attachment-fixed {
+  background-attachment: fixed;
+}
+
+.background-size-stretch {
+  background-size: 100% 100%;
+}
+
+.background-size-cover {
+  background-size: cover;
+}
+
+.background-shorthand {
+  background: #f5c542 url("../images/mountains.svg") no-repeat center;
+}
+
+/* The plain top layer covers the bottom half, so the image repeats only down to half of the page. */
+.half-page-background {
+  background:
+    linear-gradient(#f4f7f2, #f4f7f2) bottom / 100% 50% no-repeat,
+    url("../images/mountains.svg");
+}
+
+/* Whole-page examples: fixed attachment keeps the image tied to the window on short pages too. */
+.page-background-corner {
+  background: #f4f7f2 url("../images/mountains.svg") no-repeat right bottom fixed;
+}
+
+.page-background-cover {
+  background-image: url("../images/mountains.svg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Point 5: selectors. */
+#selector-id {
+  color: #b3261e;
+}
+
+.selector-class {
+  background-color: #cfe8f7;
+}
+
+.selector-descendant em {
+  color: #b3261e;
+}
+
+.selector-child > em {
+  color: #b3261e;
+}
+
+/* Point 6: box model and positioning. */
+/* The border keeps the child's margin inside this area instead of collapsing through it. */
+.box-model-area {
+  border: 1px solid #333333;
+  background-color: #f5c542;
+}
+
+.box-model {
+  margin: 20px;
+  padding: 10px;
+  border: 3px solid #4a6b52;
+  width: 180px;
+  height: 80px;
+  background-color: #cfe8f7;
+}
+
+/* Relative positioning makes this area the reference box for the absolute example. */
+.position-area {
+  position: relative;
+  border: 1px dashed #333333;
+  height: 12em;
+}
+
+.position-sample {
+  margin: 0;
+  padding: 0.25em 0.5em;
+  width: 11em;
+  background-color: #cfe8f7;
+}
+
+.position-static {
+  position: static;
+}
+
+.position-relative {
+  position: relative;
+  top: 1em;
+  left: 3em;
+}
+
+.position-absolute {
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+}
+
+.position-fixed {
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+  border: 1px solid #333333;
+  padding: 0.25em 0.5em;
+  background-color: #ffffff;
+}
+
+.float-left {
+  float: left;
+  margin: 0 1em 0.5em 0;
+}
+
+.float-right {
+  float: right;
+  margin: 0 0 0.5em 1em;
+}
+
+.clear-both {
+  clear: both;
+}
+
+/* Point 7: text formatting. */
+.weight-normal {
+  font-weight: normal;
+}
+
+.weight-bold {
+  font-weight: bold;
+}
+
+.style-italic {
+  font-style: italic;
+}
+
+.variant-small-caps {
+  font-variant: small-caps;
+}
+
+.line-tight {
+  line-height: 1;
+}
+
+.line-loose {
+  line-height: 2;
+}
+
+.family-serif {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.family-mono {
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* Point 8: border. */
+.border-demo {
+  border-width: 4px;
+  border-style: dashed;
+  border-color: #4a6b52;
+  padding: 0.5em;
+}
+
+/* Point 9: tables. */
+table,
+th,
+td {
+  border: 1px solid #333333;
+  border-collapse: collapse;
+  padding: 4px;
+}
+
+/* Child combinators keep these rules away from the tables nested in the price cells. */
+.opening-hours > thead > tr:first-child {
+  background-color: #4a6b52;
+  color: #ffffff;
+}
+
+.opening-hours > thead > tr:last-child {
+  background-color: #cfe8f7;
+}
+
+.opening-hours > tbody > tr:nth-child(even) {
+  background-color: #eef3ee;
+}
+
+.opening-hours > tbody > tr:hover {
+  background-color: #fff3c4;
+}
+
+.opening-hours > tfoot td {
+  background-color: #f5c542;
+  text-align: right;
+}
+
+.daily-hours {
+  text-align: center;
+}
+
+.price-summary {
+  font-style: italic;
+}
+
+.table-spaced {
+  border-collapse: separate;
+  border-spacing: 6px;
+  caption-side: bottom;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.table-spaced th {
+  background-color: #4a6b52;
+  color: #ffffff;
+  text-align: left;
+}
+
+.table-spaced td {
+  height: 4em;
+  vertical-align: top;
+}
+
+/* Point 11: pseudo-classes. */
+/* Link states keep the link, visited, hover, active order so that later states override earlier ones. */
+a:link {
+  color: #1f5fa8;
+}
+
+a:visited {
+  color: #6b3fa0;
+}
+
+a:hover {
+  color: #b3261e;
+}
+
+a:active {
+  color: #000000;
+}
+
+.hover-demo:hover {
+  background-color: #f5c542;
+}
+
+.pseudo-form input:enabled {
+  background-color: #eef7ee;
+}
+
+.pseudo-form input:disabled {
+  background-color: #dddddd;
+}
+
+.pseudo-form input:required {
+  border: 2px solid #b3261e;
+}
+
+.pseudo-form input:focus {
+  outline: 3px solid #f5c542;
+}
+
+.pseudo-form input:checked + label {
+  color: #2f6b3f;
+  font-weight: bold;
+}
+
+.pseudo-form button:active {
+  background-color: #4a6b52;
+  color: #ffffff;
+}
+
+.structure-list li:first-child {
+  color: #b3261e;
+  font-weight: bold;
+}
+
+.structure-list li:nth-child(2) {
+  color: #2f6b3f;
+}
+
+.structure-list li:nth-last-child(2) {
+  color: #1f5fa8;
+}
+
+.structure-list li:last-child {
+  font-style: italic;
+}
+
+.structure-list li:not(:last-child) {
+  border-bottom: 1px dotted #999999;
+}
+
+.last-of-type-demo p:last-of-type {
+  font-weight: bold;
+}
+
+.only-child-demo li:only-child {
+  color: #b3261e;
+  font-weight: bold;
+}
+
+.empty-demo:empty {
+  height: 1.5em;
+  background-color: #f5c542;
+}
+
+#target-demo:target {
+  background-color: #f5c542;
+}
+
+/* :first only exists in the @page context, so its effect is visible in print preview only. */
+@page :first {
+  margin-top: 4cm;
+}
+
+/* Point 12: three-level dropdown menu. */
+.dropdown-menu {
+  margin-bottom: 1em;
+}
+
+.dropdown-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #4a6b52;
+}
+
+.dropdown-menu > ul {
+  display: flex;
+}
+
+.dropdown-menu li {
+  position: relative;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.5em 1em;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.dropdown-menu li:hover > a,
+.dropdown-menu li:focus-within > a {
+  background-color: #2f4a37;
+}
+
+.dropdown-menu ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 10em;
+}
+
+.dropdown-menu ul ul ul {
+  top: 0;
+  left: 100%;
+}
+
+/* focus-within keeps the submenus reachable with the Tab key. */
+.dropdown-menu li:hover > ul,
+.dropdown-menu li:focus-within > ul {
+  display: block;
+}
+
+/* Point 10: media queries. They come last so they can override the rules above. */
+.media-message {
+  display: none;
+  padding: 0.25em 0.5em;
+  background-color: #fff3c4;
+}
+
+@media (max-width: 600px) {
+  .media-narrow {
+    display: block;
+  }
+
+  .float-left,
+  .float-right {
+    float: none;
+  }
+
+  /* Wide tables scroll inside their own box instead of moving the whole page. */
+  .table-scroll {
+    display: block;
+    overflow-x: auto;
+  }
+
+  /* Touch screens have no hover, so all menu levels stay open and stack vertically. */
+  .dropdown-menu > ul {
+    display: block;
+  }
+
+  .dropdown-menu ul ul {
+    display: block;
+    position: static;
+  }
+
+  .dropdown-menu ul ul a {
+    padding-left: 2em;
+  }
+
+  .dropdown-menu ul ul ul a {
+    padding-left: 3em;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1000px) {
+  .media-medium {
+    display: block;
+  }
+}
+
+@media (min-width: 1001px) {
+  .media-wide {
+    display: block;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .media-portrait {
+    display: block;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .media-landscape {
+    display: block;
+  }
+}
+
+@media print {
+  .media-print {
+    display: block;
+  }
+
+  nav,
+  .position-fixed {
+    display: none;
+  }
+
+  body {
+    font-size: 11pt;
+  }
+}
