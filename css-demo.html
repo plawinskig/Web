@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Praktyczna prezentacja CSS3: osadzanie stylów, jednostki tekstu, tła, selektory, model pudełkowy, pozycjonowanie, tabele, reguła @media i pseudoklasy.">
+  <meta name="keywords" content="CSS3, selektory, model pudełkowy, pozycjonowanie, tło strony, reguła media, pseudoklasy">
+  <title>Prezentacja możliwości CSS3 – Jelenia Góra</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Point 2: internal stylesheet. All other rules live in css/style.css. -->
+  <style>
+    .embedding-internal { color: #8a3b12; font-weight: bold; }
+  </style>
+</head>
+<body class="half-page-background">
+  <header id="top">
+    <h1>Prezentacja CSS</h1>
+    <nav>
+      <a href="index.html">Strona główna</a> |
+      <a href="history.html">Historia</a> |
+      <a href="links.html">Odnośniki</a> |
+      <a href="info.html">Informacje praktyczne</a> |
+      <a href="contact.html">Kontakt</a> |
+      <a href="attractions.html">Atrakcje</a> |
+      <a href="registration.html">Rejestracja</a> |
+      <a href="profile.html">Profil turysty</a> |
+      <a href="css-demo.html">Prezentacja CSS</a> |
+      <a href="template.html">Szablon z menu</a>
+    </nav>
+  </header>
+
+  <main>
+    <p>
+      Strona pokazuje punkty 2&ndash;11 zadania. Wszystkie reguły poza przykładami z&nbsp;punktu 2
+      znajdują się w&nbsp;pliku <code>css/style.css</code>.
+    </p>
+
+    <section>
+      <h2>2. Trzy sposoby osadzania CSS</h2>
+      <p class="embedding-external">Arkusz zewnętrzny: reguła w&nbsp;pliku <code>css/style.css</code>, dołączonym znacznikiem <code>&lt;link&gt;</code>.</p>
+      <p class="embedding-internal">Arkusz wewnętrzny: reguła w&nbsp;znaczniku <code>&lt;style&gt;</code> w&nbsp;nagłówku tej strony.</p>
+      <p style="color: #1f5fa8; font-weight: bold;">Styl liniowy: atrybut <code>style</code> bezpośrednio w&nbsp;znaczniku.</p>
+    </section>
+
+    <section>
+      <h2>3. Wielkość tekstu</h2>
+      <p class="size-percent"><code>font-size: 125%</code> – procent rozmiaru rodzica. Cała witryna ma <code>font-size: 100%</code> na <code>body</code>, więc szanuje rozmiar ustawiony w&nbsp;przeglądarce.</p>
+      <p class="size-em"><code>font-size: 1.5em</code> – też względem rodzica, <span class="size-em">więc zagnieżdżone 1.5em rośnie dalej</span>. W&nbsp;<code>em</code> są nagłówki witryny.</p>
+      <p class="size-px"><code>font-size: 12px</code> – stały rozmiar niezależny od rodzica, np. odnośnik „Do góry” w&nbsp;rogu ekranu.</p>
+      <p class="size-pt"><code>font-size: 14pt</code> – jednostka drukarska, dlatego <code>@media print</code> ustawia tekst strony w&nbsp;punktach.</p>
+    </section>
+
+    <section>
+      <h2>4. Tło strony</h2>
+      <p>Tło całej strony pokazują trzy strony witryny:</p>
+      <ul>
+        <li>ta strona: obraz powtarzany tylko do połowy jej wysokości, widoczny po bokach treści podczas przewijania,</li>
+        <li><a href="history.html">Historia</a>: nieruchomy obraz w&nbsp;prawym dolnym rogu okna,</li>
+        <li><a href="links.html">Odnośniki</a>: obraz rozciągnięty na całe okno.</li>
+      </ul>
+      <p>Pudełka poniżej pokazują poszczególne właściwości, które na tle całej strony działają tak samo:</p>
+
+      <p><code>background-color</code> – jednolity kolor:</p>
+      <div class="background-box background-color-only"></div>
+
+      <p><code>background-image</code> i&nbsp;<code>background-repeat: repeat</code> – powtarzanie w&nbsp;obu kierunkach:</p>
+      <div class="background-box background-with-image background-repeat-both"></div>
+
+      <p><code>background-repeat: repeat-x</code> – powtarzanie tylko w&nbsp;poziomie:</p>
+      <div class="background-box background-with-image background-repeat-x"></div>
+
+      <p><code>background-repeat: repeat-y</code> – powtarzanie tylko w&nbsp;pionie:</p>
+      <div class="background-box background-with-image background-repeat-y"></div>
+
+      <p><code>background-repeat: no-repeat</code> – jeden obraz:</p>
+      <div class="background-box background-with-image background-no-repeat"></div>
+
+      <p><code>background-position: right bottom</code> – położenie określone słowami kluczowymi:</p>
+      <div class="background-box background-with-image background-no-repeat background-position-keywords"></div>
+
+      <p><code>background-position: 40px 20px</code> – położenie określone długościami:</p>
+      <div class="background-box background-with-image background-no-repeat background-position-lengths"></div>
+
+      <p><code>background-attachment: fixed</code> – obraz stoi w&nbsp;miejscu podczas przewijania strony:</p>
+      <div class="background-box background-with-image background-attachment-fixed"></div>
+
+      <p><code>background-size: 100% 100%</code> – rozciągnięcie na cały element, bez zachowania proporcji:</p>
+      <div class="background-box background-with-image background-size-stretch"></div>
+
+      <p><code>background-size: cover</code> – pokrycie całego elementu z&nbsp;zachowaniem proporcji:</p>
+      <div class="background-box background-with-image background-size-cover"></div>
+
+      <p><code>background</code> – właściwość skrócona (kolor, obraz, powtarzanie i&nbsp;położenie):</p>
+      <div class="background-box background-shorthand"></div>
+    </section>
+
+    <section>
+      <h2>5. Selektory</h2>
+      <p id="selector-id">Identyfikator <code>#selector-id</code> wybiera ten jeden akapit.</p>
+      <p class="selector-class">Klasa <code>.selector-class</code> wybiera ten akapit&hellip;</p>
+      <p class="selector-class">&hellip;oraz ten, bo klasę można nadać wielu elementom.</p>
+
+      <p>Zagnieżdżenie <code>.selector-descendant em</code> obejmuje każdy <code>em</code> w&nbsp;bloku, na dowolnej głębokości:</p>
+      <div class="selector-descendant">
+        <em>em bezpośrednio w&nbsp;bloku</em>
+        <p><em>em głębiej, wewnątrz akapitu</em></p>
+      </div>
+
+      <p>Selektor dziecka <code>.selector-child &gt; em</code> obejmuje tylko <code>em</code> leżący bezpośrednio w&nbsp;bloku:</p>
+      <div class="selector-child">
+        <em>em bezpośrednio w&nbsp;bloku</em>
+        <p><em>em głębiej, wewnątrz akapitu, bez zmiany koloru</em></p>
+      </div>
+
+      <table class="table-scroll">
+        <caption><strong>Kiedy używać poszczególnych selektorów</strong></caption>
+        <thead>
+          <tr>
+            <th scope="col">Selektor</th>
+            <th scope="col">Przykład</th>
+            <th scope="col">Kiedy używać</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Identyfikator</th>
+            <td><code>#top</code></td>
+            <td>Element występujący na stronie dokładnie raz, np. cel odnośnika. Ma wysoką specyficzność i&nbsp;trudno go nadpisać, więc do wyglądu zwykle lepsza jest klasa.</td>
+          </tr>
+          <tr>
+            <th scope="row">Klasa</th>
+            <td><code>.warning</code></td>
+            <td>Domyślny wybór do stylowania: ten sam wygląd wielu elementów, a&nbsp;jeden element może mieć kilka klas.</td>
+          </tr>
+          <tr>
+            <th scope="row">Zagnieżdżenie</th>
+            <td><code>nav a</code></td>
+            <td>Styl zależny od miejsca w&nbsp;dokumencie, bez dopisywania klasy każdemu elementowi. Długich łańcuchów lepiej unikać, bo wiążą arkusz ze strukturą HTML.</td>
+          </tr>
+          <tr>
+            <th scope="row">Dziecko</th>
+            <td><code>ul &gt; li</code></td>
+            <td>Reguła dla bezpośrednich dzieci, która nie może objąć głębszych poziomów, np. w&nbsp;tabelach zagnieżdżonych i&nbsp;menu wielopoziomowych.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>6. Model pudełkowy i&nbsp;pozycjonowanie</h2>
+
+      <h3>margin, padding, width, height</h3>
+      <div class="box-model-area">
+        <div class="box-model">width: 180px; height: 80px; padding: 10px; margin: 20px</div>
+      </div>
+      <p>Żółte pole to margines, zielona linia to ramka, a&nbsp;niebieskie pole to treść z&nbsp;dopełnieniem.</p>
+
+      <h3>position, top, right, bottom, left</h3>
+      <div class="position-area">
+        <p class="position-sample position-static">static: zwykły układ</p>
+        <p class="position-sample position-relative">relative: top, left</p>
+        <p class="position-sample position-absolute">absolute: right, bottom</p>
+      </div>
+      <p>Odnośnik „Do góry” w&nbsp;prawym dolnym rogu ekranu ma <code>position: fixed</code>, więc zostaje na miejscu podczas przewijania.</p>
+
+      <h3>float, clear</h3>
+      <img class="float-left" src="images/mountains.svg" alt="Sylwetka Karkonoszy po lewej stronie tekstu" width="100" height="60">
+      <img class="float-right" src="images/mountains.svg" alt="Sylwetka Karkonoszy po prawej stronie tekstu" width="100" height="60">
+      <p>Ten tekst opływa obie grafiki: pierwsza ma <code>float: left</code>, a&nbsp;druga <code>float: right</code>.</p>
+      <p class="clear-both">Ten akapit ma <code>clear: both</code>, dlatego zaczyna się dopiero pod grafikami.</p>
+    </section>
+
+    <section>
+      <h2>7. Formatowanie tekstu</h2>
+      <p class="weight-bold"><code>font-weight: bold</code> – tekst pogrubiony.</p>
+      <p class="weight-normal"><code>font-weight: normal</code> – zwykła grubość tekstu.</p>
+      <p class="style-italic"><code>font-style: italic</code> – kursywa.</p>
+      <p class="variant-small-caps"><code>font-variant: small-caps</code> – Kapitaliki Zamiast Małych Liter.</p>
+      <p class="size-em"><code>font-size: 1.5em</code> – tekst większy niż otoczenie.</p>
+      <p class="line-tight"><code>line-height: 1</code> – mała interlinia:<br>drugi wiersz leży tuż pod pierwszym.</p>
+      <p class="line-loose"><code>line-height: 2</code> – duża interlinia:<br>drugi wiersz leży wyraźnie niżej.</p>
+      <p class="family-serif"><code>font-family: Georgia, "Times New Roman", serif</code> – czcionka szeryfowa.</p>
+      <p class="family-mono"><code>font-family: "Courier New", Courier, monospace</code> – znaki o&nbsp;stałej szerokości.</p>
+    </section>
+
+    <section>
+      <h2>8. Ramka</h2>
+      <p class="border-demo">Ta ramka powstała z&nbsp;jednej reguły: <code>border-width: 4px</code>, <code>border-style: dashed</code>, <code>border-color: #4a6b52</code>.</p>
+    </section>
+
+    <section>
+      <h2>9. Stylowanie tabel</h2>
+      <p>
+        Tabela na stronie <a href="info.html">Informacje praktyczne</a> ma złączone ramki (<code>border-collapse: collapse</code>),
+        kolorowe nagłówki i&nbsp;stopkę, co drugi wiersz w&nbsp;innym kolorze (<code>:nth-child(even)</code>)
+        oraz podświetlenie wiersza pod kursorem (<code>:hover</code>). Poniższa tabela pokazuje inne możliwości:
+      </p>
+      <table class="table-spaced">
+        <caption><code>caption-side: bottom</code> przenosi ten podpis pod tabelę</caption>
+        <thead>
+          <tr>
+            <th scope="col">Właściwość</th>
+            <th scope="col">Efekt</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>border-spacing: 6px</code></td>
+            <td>Odstępy między komórkami przy <code>border-collapse: separate</code></td>
+          </tr>
+          <tr>
+            <td><code>table-layout: fixed</code></td>
+            <td>Kolumny równej szerokości, niezależnie od treści</td>
+          </tr>
+          <tr>
+            <td><code>vertical-align: top</code></td>
+            <td>Treść przy górnej krawędzi wysokiej komórki</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>10. Reguła @media</h2>
+      <p>Zmień szerokość okna albo otwórz podgląd wydruku, a&nbsp;poniższe komunikaty będą się zmieniać:</p>
+      <p class="media-message media-narrow">Okno ma najwyżej 600 px szerokości: <code>@media (max-width: 600px)</code></p>
+      <p class="media-message media-medium">Okno ma od 601 do 1000 px szerokości: <code>@media (min-width: 601px) and (max-width: 1000px)</code></p>
+      <p class="media-message media-wide">Okno ma ponad 1000 px szerokości: <code>@media (min-width: 1001px)</code></p>
+      <p class="media-message media-portrait">Ekran w&nbsp;orientacji pionowej: <code>@media screen and (orientation: portrait)</code></p>
+      <p class="media-message media-landscape">Ekran w&nbsp;orientacji poziomej: <code>@media screen and (orientation: landscape)</code></p>
+      <p class="media-message media-print">Ten komunikat widać tylko na wydruku: <code>@media print</code></p>
+      <p>
+        Praktyczne zastosowania: na wąskim ekranie grafiki z&nbsp;punktu 6 przestają opływać tekst,
+        a&nbsp;menu w&nbsp;<a href="template.html">szablonie</a> układa się pionowo.
+        Na wydruku znika nawigacja, a&nbsp;tekst ma 11&nbsp;pt.
+      </p>
+    </section>
+
+    <section>
+      <h2>11. Pseudoklasy</h2>
+
+      <h3>Odnośniki i&nbsp;kursor</h3>
+      <ul>
+        <li><code>:link</code> – <a href="https://example.org/">odnośnik nieodwiedzony</a> jest niebieski, a&nbsp;po kliknięciu staje się fioletowy.</li>
+        <li><code>:visited</code> – kliknij <a href="css-demo.html">odnośnik do tej strony</a>, a&nbsp;jako odwiedzony będzie fioletowy.</li>
+        <li><code>:hover</code> i&nbsp;<code>:active</code> – odnośnik pod kursorem jest czerwony, a&nbsp;przytrzymany przyciskiem myszy czarny.</li>
+      </ul>
+      <p class="hover-demo"><code>:hover</code> – najedź kursorem, a&nbsp;ten akapit dostanie żółte tło.</p>
+
+      <h3>Pola formularza</h3>
+      <div class="pseudo-form">
+        <p>
+          <label for="demo-required"><code>:required</code> – pole wymagane ma czerwoną ramkę:</label>
+          <input type="text" id="demo-required" required>
+        </p>
+        <p>
+          <label for="demo-enabled"><code>:enabled</code> i&nbsp;<code>:focus</code> – aktywne pole ma zielone tło, a&nbsp;po kliknięciu żółtą obwódkę:</label>
+          <input type="text" id="demo-enabled">
+        </p>
+        <p>
+          <label for="demo-disabled"><code>:disabled</code> – zablokowane pole jest szare:</label>
+          <input type="text" id="demo-disabled" disabled>
+        </p>
+        <p>
+          <input type="checkbox" id="demo-checked">
+          <label for="demo-checked"><code>:checked</code> – zaznacz pole, a&nbsp;ten opis zostanie pogrubiony</label>
+        </p>
+        <p><button type="button"><code>:active</code> – naciśnij i&nbsp;przytrzymaj</button></p>
+      </div>
+
+      <h3>Położenie elementu</h3>
+      <ul class="structure-list">
+        <li><code>:first-child</code> – pierwszy element listy (czerwony i&nbsp;pogrubiony)</li>
+        <li><code>:nth-child(2)</code> – drugi element listy (zielony)</li>
+        <li>Kropkowaną linię pod elementami daje <code>:not(:last-child)</code></li>
+        <li><code>:nth-last-child(2)</code> – drugi element od końca (niebieski)</li>
+        <li><code>:last-child</code> – ostatni element listy (kursywa), jako jedyny bez linii</li>
+      </ul>
+      <div class="last-of-type-demo">
+        <p>Pierwszy akapit w&nbsp;bloku.</p>
+        <p><code>:last-of-type</code> – ostatni akapit w&nbsp;bloku jest pogrubiony.</p>
+        <small>Ten element ma inny typ, dlatego powyższy akapit nie jest <code>:last-child</code>.</small>
+      </div>
+      <ul class="only-child-demo">
+        <li><code>:only-child</code> – jedyny element tej listy (czerwony i&nbsp;pogrubiony)</li>
+      </ul>
+
+      <h3>Pusty element i&nbsp;cel odnośnika</h3>
+      <div class="empty-demo"></div>
+      <div class="empty-demo"><code>:empty</code> – żółty pasek powyżej to pusty blok, a&nbsp;ten blok ma treść, więc reguła go nie obejmuje.</div>
+      <p><a href="#target-demo"><code>:target</code> – kliknij, aby przejść do akapitu docelowego</a></p>
+      <p id="target-demo">Ten akapit ma żółte tło, gdy adres strony kończy się na <code>#target-demo</code>.</p>
+
+      <h3>Wydruk</h3>
+      <p><code>:first</code> działa tylko w&nbsp;regule <code>@page</code>: w&nbsp;podglądzie wydruku (Ctrl+P) pierwsza strona ma większy górny margines niż kolejne.</p>
+    </section>
+
+    <a class="position-fixed size-px" href="#top">&uarr; Do góry</a>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Jelenia Góra – projekt witryny. Napisz: <a href="mailto:kontakt@example.com">kontakt@example.com</a></p>
+  </footer>
+</body>
+</html>
