@@ -1,6 +1,4 @@
-/* Site stylesheet. Sections follow the numbered points of assignment CSS_1. */
 
-/* Base styles. The % base keeps the visitor's browser font size and em headings scale with it. */
 body {
   margin: 0 auto;
   padding: 1em;
@@ -24,7 +22,6 @@ h3 {
   font-size: 1.2em;
 }
 
-/* Opaque panels keep text readable over image backgrounds. */
 body > header,
 body > main,
 body > footer {
@@ -33,7 +30,6 @@ body > footer {
   background-color: #ffffff;
 }
 
-/* Wide content must not force the whole page to scroll sideways. */
 img,
 textarea {
   max-width: 100%;
@@ -43,13 +39,11 @@ img {
   height: auto;
 }
 
-/* Point 2: external stylesheet. */
 .embedding-external {
   color: #4a6b52;
   font-weight: bold;
 }
 
-/* Point 3: font size units. */
 .size-percent {
   font-size: 125%;
 }
@@ -66,7 +60,6 @@ img {
   font-size: 14pt;
 }
 
-/* Point 4: backgrounds. */
 .background-box {
   margin-bottom: 1em;
   border: 1px solid #333333;
@@ -77,7 +70,6 @@ img {
   background-color: #cfe8f7;
 }
 
-/* A smaller tile makes the repetition visible inside a low box. */
 .background-with-image {
   background-image: url("../images/mountains.svg");
   background-size: 100px 60px;
@@ -123,14 +115,12 @@ img {
   background: #f5c542 url("../images/mountains.svg") no-repeat center;
 }
 
-/* The plain top layer covers the bottom half, so the image repeats only down to half of the page. */
 .half-page-background {
   background:
     linear-gradient(#f4f7f2, #f4f7f2) bottom / 100% 50% no-repeat,
     url("../images/mountains.svg");
 }
 
-/* Whole-page examples: fixed attachment keeps the image tied to the window on short pages too. */
 .page-background-corner {
   background: #f4f7f2 url("../images/mountains.svg") no-repeat right bottom fixed;
 }
@@ -141,7 +131,6 @@ img {
   background-attachment: fixed;
 }
 
-/* Point 5: selectors. */
 #selector-id {
   color: #b3261e;
 }
@@ -158,8 +147,6 @@ img {
   color: #b3261e;
 }
 
-/* Point 6: box model and positioning. */
-/* The border keeps the child's margin inside this area instead of collapsing through it. */
 .box-model-area {
   border: 1px solid #333333;
   background-color: #f5c542;
@@ -174,7 +161,6 @@ img {
   background-color: #cfe8f7;
 }
 
-/* Relative positioning makes this area the reference box for the absolute example. */
 .position-area {
   position: relative;
   border: 1px dashed #333333;
@@ -227,7 +213,6 @@ img {
   clear: both;
 }
 
-/* Point 7: text formatting. */
 .weight-normal {
   font-weight: normal;
 }
@@ -260,7 +245,6 @@ img {
   font-family: "Courier New", Courier, monospace;
 }
 
-/* Point 8: border. */
 .border-demo {
   border-width: 4px;
   border-style: dashed;
@@ -268,7 +252,6 @@ img {
   padding: 0.5em;
 }
 
-/* Point 9: tables. */
 table,
 th,
 td {
@@ -277,7 +260,6 @@ td {
   padding: 4px;
 }
 
-/* Child combinators keep these rules away from the tables nested in the price cells. */
 .opening-hours > thead > tr:first-child {
   background-color: #4a6b52;
   color: #ffffff;
@@ -327,8 +309,6 @@ td {
   vertical-align: top;
 }
 
-/* Point 11: pseudo-classes. */
-/* Link states keep the link, visited, hover, active order so that later states override earlier ones. */
 a:link {
   color: #1f5fa8;
 }
@@ -414,12 +394,10 @@ a:active {
   background-color: #f5c542;
 }
 
-/* :first only exists in the @page context, so its effect is visible in print preview only. */
 @page :first {
   margin-top: 4cm;
 }
 
-/* Point 12: three-level dropdown menu. */
 .dropdown-menu {
   margin-bottom: 1em;
 }
@@ -464,13 +442,11 @@ a:active {
   left: 100%;
 }
 
-/* focus-within keeps the submenus reachable with the Tab key. */
 .dropdown-menu li:hover > ul,
 .dropdown-menu li:focus-within > ul {
   display: block;
 }
 
-/* Point 10: media queries. They come last so they can override the rules above. */
 .media-message {
   display: none;
   padding: 0.25em 0.5em;
@@ -487,13 +463,11 @@ a:active {
     float: none;
   }
 
-  /* Wide tables scroll inside their own box instead of moving the whole page. */
   .table-scroll {
     display: block;
     overflow-x: auto;
   }
 
-  /* Touch screens have no hover, so all menu levels stay open and stack vertically. */
   .dropdown-menu > ul {
     display: block;
   }
