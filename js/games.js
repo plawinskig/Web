@@ -1,7 +1,4 @@
-/*jslint browser, for */
 
-// Global variables shared by the games below
-// and by the inline script in games.html.
 const MIN_NUMBER = 1;
 const MAX_NUMBER = 100;
 const MAX_ATTEMPTS = 3;
@@ -10,13 +7,10 @@ const MONTH_NAMES = [
     "lipiec", "sierpień", "wrzesień", "październik", "listopad", "grudzień"
 ];
 
-// Returns a random integer from min to max, both inclusive.
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// Asks until the user enters an integer from min to max.
-// Returns that integer, or null when the user cancels the prompt.
 function askForInteger(message, min, max) {
     let answer;
     let number;
@@ -36,7 +30,6 @@ function showResult(elementId, html) {
     document.getElementById(elementId).innerHTML = html;
 }
 
-// Winter wraps around the year end (12, 1, 2), so it is the default case.
 function getSeason(monthNumber) {
     switch (monthNumber) {
     case 3:
@@ -95,9 +88,6 @@ function playMonthGame() {
     }
 }
 
-// Guessing game for a number from MIN_NUMBER to MAX_NUMBER
-// with a hint after each miss. The game ends when the number
-// is guessed or after maxAttempts tries.
 function playNumberGame(maxAttempts, resultId) {
     const secretNumber = getRandomInt(MIN_NUMBER, MAX_NUMBER);
     const secretHtml = "<strong>" + secretNumber + "</strong>";
@@ -178,8 +168,7 @@ function playSumGame() {
         if (answer === null) {
             break;
         }
-        // Polish users type decimals with a comma,
-        // which parseFloat would silently cut off.
+
         number = parseFloat(answer.replace(",", "."));
         if (Number.isNaN(number)) {
             window.alert("To nie jest liczba. Spróbuj jeszcze raz.");
