@@ -61,10 +61,9 @@ function playMonthGame() {
     const secretName = MONTH_NAMES[secretMonth - 1];
     const secretHtml = "<strong>" + secretName + "</strong>";
     let answer;
-    let attempt;
     let isGuessed = false;
 
-    for (attempt = 1; attempt <= MAX_ATTEMPTS && !isGuessed; attempt += 1) {
+    for (let attempt = 1; attempt <= MAX_ATTEMPTS && !isGuessed; attempt += 1) {
         answer = window.prompt(
             "Próba " + attempt + " z " + MAX_ATTEMPTS
             + ". Podaj nazwę miesiąca, np. maj:"
