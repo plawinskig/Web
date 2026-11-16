@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Zgadywanki w JavaScript: odgadnij wylosowany miesiąc lub liczbę od 1 do 100 i policz sumę podanych liczb.">
+  <meta name="keywords" content="JavaScript, zgadywanka, gra, losowanie, zgadnij liczbę, zgadnij miesiąc, suma liczb">
+  <title>Zgadywanki – Jelenia Góra</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/games.js"></script>
+</head>
+<body>
+  <header id="top">
+    <h1>Zgadywanki</h1>
+    <nav>
+      <a href="index.html">Strona główna</a> |
+      <a href="history.html">Historia</a> |
+      <a href="links.html">Odnośniki</a> |
+      <a href="info.html">Informacje praktyczne</a> |
+      <a href="contact.html">Kontakt</a> |
+      <a href="attractions.html">Atrakcje</a> |
+      <a href="registration.html">Rejestracja</a> |
+      <a href="profile.html">Profil turysty</a> |
+      <a href="css-demo.html">Prezentacja CSS</a> |
+      <a href="template.html">Szablon z menu</a> |
+      <a href="games.html">Zgadywanki</a>
+    </nav>
+  </header>
+
+  <main>
+    <script>
+      document.writeln("<p>Komputer losuje liczby z zakresu " + MIN_NUMBER + "–" + MAX_NUMBER + ". Każdą grę możesz przerwać przyciskiem Anuluj.</p>");
+    </script>
+
+    <section>
+      <h2>Zgadnij miesiąc</h2>
+      <p>Komputer losuje miesiąc, a&nbsp;Ty masz 3 szanse. Po każdej pomyłce dostajesz podpowiedź: porę roku.</p>
+      <button type="button" id="month-game-button">Zagraj</button>
+      <p id="month-result" aria-live="polite"></p>
+    </section>
+
+    <section>
+      <h2>Zgadnij liczbę w&nbsp;3 próbach</h2>
+      <p>Komputer losuje liczbę od 1 do 100. Po każdej próbie dowiesz się, czy podana liczba jest za mała, czy za duża.</p>
+      <button type="button" id="three-chances-button">Zagraj</button>
+      <p id="three-chances-result" aria-live="polite"></p>
+    </section>
+
+    <section>
+      <h2>Zgadnij liczbę w&nbsp;N próbach</h2>
+      <p>Najpierw wybierasz liczbę prób. Gra kończy się, gdy trafisz w&nbsp;wylosowaną liczbę albo wykorzystasz wszystkie próby.</p>
+      <button type="button" id="chosen-attempts-button">Zagraj</button>
+      <p id="chosen-attempts-result" aria-live="polite"></p>
+    </section>
+
+    <section>
+      <h2>Suma liczb</h2>
+      <p>Podaj, ile liczb chcesz dodać, a&nbsp;potem wpisuj je po kolei. Po każdej liczbie zobaczysz sumę dotychczas podanych.</p>
+      <button type="button" id="sum-button">Zacznij</button>
+      <p id="sum-result" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Jelenia Góra – projekt witryny. Napisz: <a href="mailto:kontakt@example.com">kontakt@example.com</a></p>
+  </footer>
+</body>
+</html>
