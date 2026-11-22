@@ -26,6 +26,7 @@ function showMousePosition(event) {
         + ", clientY: " + event.clientY
         + ", screenX: " + event.screenX
         + ", screenY: " + event.screenY
+        + ", " + describeModifierKeys(event)
     );
 }
 
