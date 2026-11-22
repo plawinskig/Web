@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Demonstracja DOM i zdarzeń w JavaScript: modyfikacja listy, kolekcje dokumentu, zmiana stylów strony i właściwości obiektu event.">
+  <meta name="keywords" content="JavaScript, DOM, zdarzenia, createElement, kolekcje, event, Jelenia Góra">
+  <title>DOM i zdarzenia – Jelenia Góra</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/dom-list.js"></script>
+  <script src="js/collections.js"></script>
+  <script src="js/style-switcher.js"></script>
+  <script src="js/event-info.js"></script>
+</head>
+<body>
+  <header id="top">
+    <h1>DOM i zdarzenia</h1>
+    <nav>
+      <a href="index.html">Strona główna</a> |
+      <a href="history.html">Historia</a> |
+      <a href="links.html">Odnośniki</a> |
+      <a href="info.html">Informacje praktyczne</a> |
+      <a href="contact.html">Kontakt</a> |
+      <a href="attractions.html">Atrakcje</a> |
+      <a href="registration.html">Rejestracja</a> |
+      <a href="profile.html">Profil turysty</a> |
+      <a href="css-demo.html">Prezentacja CSS</a> |
+      <a href="template.html">Szablon z menu</a> |
+      <a href="games.html">Zgadywanki</a> |
+      <a href="dom-events.html">DOM i zdarzenia</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>1. Metody DOM na liście numerowanej</h2>
+      <p>
+        Lista jest na początku pusta. Nowy element powstaje przez <code>createElement</code> i&nbsp;<code>createTextNode</code>,
+        a&nbsp;zamiana i&nbsp;usuwanie korzystają z&nbsp;właściwości <code>parentNode</code>.
+      </p>
+      <p>
+        <button type="button" id="append-item-button">Dodaj na końcu (appendChild)</button>
+        <button type="button" id="insert-item-button">Wstaw na początku (insertBefore)</button>
+        <button type="button" id="replace-item-button">Zamień pierwszy (replaceChild)</button>
+        <button type="button" id="remove-item-button">Usuń ostatni (removeChild)</button>
+      </p>
+      <ol id="dom-list"></ol>
+    </section>
+
+    <section>
+      <h2>2. Kolekcje dokumentu</h2>
+      <p>
+        Kolekcje <code>images</code>, <code>links</code>, <code>forms</code> i&nbsp;<code>anchors</code> obejmują całą stronę.
+        Elementy pobierane są metodami <code>item</code> (po numerze) i&nbsp;<code>namedItem</code> (po <code>id</code> lub <code>name</code>).
+      </p>
+      <img src="images/mountains.svg" id="collections-image" alt="Sylwetka Karkonoszy" width="100" height="60">
+      <p>Odnośnik z&nbsp;identyfikatorem: <a href="links.html" id="links-page-link">Przydatne odnośniki</a></p>
+      <!-- document.anchors lists only <a> elements with a name attribute, which is obsolete in HTML5 but required here. -->
+      <p>Kotwice: <a name="anchor-first">kotwica 1</a>, <a name="anchor-second">kotwica 2</a></p>
+      <p><button type="button" id="collections-button">Pokaż kolekcje</button></p>
+      <pre id="collections-output"></pre>
+    </section>
+
+    <section>
+      <h2>3. Zmiana stylów strony</h2>
+      <form id="style-form">
+        <p>
+          <label for="background-color">Kolor tła:</label>
+          <input type="color" id="background-color" value="#f4f7f2">
+        </p>
+        <p>
+          <label for="text-color">Kolor tekstu:</label>
+          <input type="color" id="text-color" value="#222222">
+        </p>
+        <p>
+          <label for="font-family">Czcionka:</label>
+          <select id="font-family">
+            <option value="Arial, Helvetica, sans-serif">Arial</option>
+            <option value="Georgia, 'Times New Roman', serif">Georgia</option>
+            <option value="'Courier New', Courier, monospace">Courier New</option>
+            <option value="Verdana, Geneva, sans-serif">Verdana</option>
+          </select>
+        </p>
+      </form>
+    </section>
+
+    <section>
+      <h2>4. Właściwości obiektu event</h2>
+      <p>
+        Najedź kursorem na pole, poruszaj nim i&nbsp;wciśnij przycisk myszy (także z&nbsp;Alt, Ctrl lub Shift).
+        Naciśnij też dowolny klawisz, aby zobaczyć <code>keyCode</code>.
+      </p>
+      <div id="event-area" class="event-area">Pole testowe</div>
+      <p id="hover-info">mouseover / mouseout: brak</p>
+      <p id="move-info">mousemove: brak</p>
+      <p id="down-info">mousedown: brak</p>
+      <p id="key-info">keydown: brak</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Jelenia Góra – projekt witryny. Napisz: <a href="mailto:kontakt@example.com">kontakt@example.com</a></p>
+  </footer>
+</body>
+</html>

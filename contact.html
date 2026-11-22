@@ -7,6 +7,7 @@
   <meta name="keywords" content="Jelenia Góra kontakt, formularz, informacja turystyczna, zapytanie">
   <title>Kontakt – Jelenia Góra</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/form-events.js"></script>
 </head>
 <body>
   <header id="top">
@@ -22,7 +23,8 @@
       <a href="profile.html">Profil turysty</a> |
       <a href="css-demo.html">Prezentacja CSS</a> |
       <a href="template.html">Szablon z menu</a> |
-      <a href="games.html">Zgadywanki</a>
+      <a href="games.html">Zgadywanki</a> |
+      <a href="dom-events.html">DOM i zdarzenia</a>
     </nav>
   </header>
 
@@ -31,20 +33,23 @@
     <form action="contact.html" method="get">
       <p>
         <label for="first-name">Imię:</label>
-        <input type="text" id="first-name" name="first_name">
+        <input type="text" id="first-name" name="first_name" aria-describedby="first-name-hint">
+        <small id="first-name-hint">np. Anna</small>
       </p>
       <p>
         <label for="last-name">Nazwisko:</label>
-        <input type="text" id="last-name" name="last_name">
+        <input type="text" id="last-name" name="last_name" aria-describedby="last-name-hint">
+        <small id="last-name-hint">np. Kowalska</small>
       </p>
       <p>
         <label for="home-city">Skąd przyjeżdżasz?</label>
-        <input type="text" id="home-city" name="home_city">
+        <input type="text" id="home-city" name="home_city" aria-describedby="home-city-hint">
+        <small id="home-city-hint">podaj miejscowość, np. Wrocław</small>
       </p>
 
       <p>
         <label for="topic">Temat zapytania:</label>
-        <select id="topic" name="topic">
+        <select id="topic" name="topic" aria-describedby="topic-hint">
           <optgroup label="Atrakcje">
             <option value="monuments">Zabytki</option>
             <option value="nature">Przyroda</option>
@@ -54,6 +59,7 @@
             <option value="spa">Uzdrowisko Cieplice</option>
           </optgroup>
         </select>
+        <small id="topic-hint">wybierz temat najbliższy Twojemu pytaniu</small>
       </p>
 
       <fieldset>
@@ -78,7 +84,8 @@
 
       <p>
         <label for="message">Wiadomość (maks. 200 znaków):</label><br>
-        <textarea id="message" name="message" rows="5" cols="40" maxlength="200"></textarea>
+        <textarea id="message" name="message" rows="5" cols="40" maxlength="200" aria-describedby="message-hint"></textarea><br>
+        <small id="message-hint">napisz krótko, w&nbsp;czym możemy pomóc</small>
       </p>
 
       <p>

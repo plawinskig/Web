@@ -447,6 +447,20 @@ a:active {
   display: block;
 }
 
+pre {
+  white-space: pre-wrap;
+}
+
+.event-area {
+  border: 2px dashed #4a6b52;
+  padding: 1em;
+  height: 8em;
+}
+
+.event-area-active {
+  background-color: #fff3c4;
+}
+
 .media-message {
   display: none;
   padding: 0.25em 0.5em;
